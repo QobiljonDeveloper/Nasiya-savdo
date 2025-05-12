@@ -113,3 +113,32 @@ drop table users
 show TABLES
 
 ALTER TABLE users RENAME COLUMN locatinon TO location;
+
+
+SELECT 
+    laptops.id AS laptop_id,
+    laptops.name AS laptop_name,
+    contracts.contract_date,
+    users.id AS customer_id,
+    users.full_name
+FROM contracts
+JOIN laptops ON contracts.laptop_id = laptops.id
+JOIN users ON contracts.customer_id = users.id
+WHERE contracts.contract_date BETWEEN '2025-01-01' AND '2025-05-01';
+
+
+
+SELECT 
+    u.full_name AS customer_name,
+    l.name AS laptop_name,
+    c.id AS contract_id,
+    c.remaining_balance AS amount_due,
+    DATEDIFF(CURDATE(), c.end_payment_date) AS overdue_days
+FROM 
+    contracts c
+JOIN users u ON c.customer_id = u.id
+JOIN laptops l ON c.laptop_id = l.id
+WHERE 
+    c.end_payment_date < CURDATE()
+    AND c.remaining_balance > 0
+    AND c.contract_status = 'active';
