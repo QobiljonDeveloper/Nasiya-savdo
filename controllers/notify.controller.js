@@ -1,5 +1,6 @@
 const db = require("../config/db");
 const notificationValidationSchema = require("../validation/notify.validation");
+const queryGenerate = require("../utils/query.generate");
 
 const getAllNotifications = (req, res) => {
   db.query(`SELECT * FROM notifications`, (err, result) => {

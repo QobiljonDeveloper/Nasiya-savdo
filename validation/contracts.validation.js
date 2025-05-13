@@ -25,7 +25,6 @@ const contractValidationSchema = Joi.object({
   contract_status: Joi.string()
     .valid("active", "completed", "cancelled")
     .default("active")
-    .required()
     .messages({
       "any.required": "Contract status is required",
       "string.base": "Contract status must be a string",
@@ -41,7 +40,7 @@ const contractValidationSchema = Joi.object({
     "any.required": "Base price is required",
     "number.base": "Base price must be a number",
   }),
-  initial_payment: Joi.number().precision(2).required().messages({
+  initial_payment: Joi.number().precision(2).messages({
     "any.required": "Initial payment is required",
     "number.base": "Initial payment must be a number",
   }),

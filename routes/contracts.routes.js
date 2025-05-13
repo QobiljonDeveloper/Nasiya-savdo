@@ -11,7 +11,7 @@ const {
 
 router.get("/", getAllContracts);
 router.post("/create", createContract);
-router.put("/:id", updateContract);
+router.patch("/:id", updateContract);
 router.delete("/:id", deleteContract);
 router.get("/:id", getContractById);
 

@@ -1,7 +1,7 @@
 const Joi = require("joi");
 
 const laptopValidationSchema = Joi.object({
-  name: Joi.string().min(3).max(255).required().messages({
+  name: Joi.string().min(3).required().messages({
     "string.base": "Name must be a string.",
     "string.min": "Name should have at least 3 characters.",
     "string.max": "Name should have at most 255 characters.",

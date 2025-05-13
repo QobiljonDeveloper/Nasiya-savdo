@@ -1,4 +1,5 @@
 const db = require("../config/db");
+const queryGenerate = require("../utils/query.generate");
 const paymentValidationSchema = require("../validation/payment.validation");
 
 const getAllPayments = (req, res) => {

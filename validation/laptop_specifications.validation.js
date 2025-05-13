@@ -9,7 +9,7 @@ const laptopSpecificationValidationSchema = Joi.object({
     "any.required": "Feature ID is required",
     "number.base": "Feature ID must be a number",
   }),
-  value: Joi.string().min(1).max(255).required().messages({
+  value: Joi.string().min(1).required().messages({
     "any.required": "Value is required",
     "string.base": "Value must be a string",
     "string.min": "Value must be at least 1 character long",

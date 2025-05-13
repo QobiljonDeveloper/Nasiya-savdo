@@ -9,7 +9,7 @@ const notificationValidationSchema = Joi.object({
     "number.base": `"contract_id" must be a number`,
     "any.required": `"contract_id" is required`,
   }),
-  notification: Joi.string().min(1).max(255).required().messages({
+  notification: Joi.string().min(1).required().messages({
     "string.base": `"notification" must be a string`,
     "string.empty": `"notification" cannot be empty`,
     "any.required": `"notification" is required`,

@@ -11,7 +11,7 @@ const {
 
 router.get("/", getAllLaptopSpecifications);
 router.post("/create", createLaptopSpecification);
-router.put("/:id", updateLaptopSpecification);
+router.patch("/:id", updateLaptopSpecification);
 router.delete("/:id", deleteLaptopSpecification);
 router.get("/:id", getLaptopSpecificationById);
 

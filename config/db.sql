@@ -119,12 +119,12 @@ SELECT
     laptops.id AS laptop_id,
     laptops.name AS laptop_name,
     contracts.contract_date,
-    users.id AS customer_id,
+    users.id AS user_id,
     users.full_name
 FROM contracts
 JOIN laptops ON contracts.laptop_id = laptops.id
 JOIN users ON contracts.customer_id = users.id
-WHERE contracts.contract_date BETWEEN '2025-01-01' AND '2025-05-01';
+WHERE contracts.contract_date BETWEEN '2025-01-01' AND '2025-09-01';
 
 
 
